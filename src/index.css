@@ -41,6 +41,13 @@ main {
 .instructions {
   text-align: center;
   color: white;
+  padding: 30px;
+}
+
+.counter {
+  padding: 30px;
+  text-align: center;
+  color: white;
 }
 
 .dice-container {

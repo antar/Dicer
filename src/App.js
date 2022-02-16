@@ -10,6 +10,7 @@ function App() {
 
   const [dice, setDice] = React.useState(createRandomDice())
   const [winner, setWinner] = React.useState(false)
+  const [rollCounter, setRollCounter] = React.useState(0)
 
   React.useEffect(() => {
     const allSelected = dice.every(die => die.isSelected)
@@ -47,9 +48,11 @@ function App() {
       setDice(prevDie => prevDie.map(die => {
         return die.isSelected ? die : generateNewDie()
       }))
+      setRollCounter(prevCount => prevCount + 1)
     } else {
       setWinner(false)
       setDice(createRandomDice())
+      setRollCounter(0)
     }
   }
 
@@ -57,14 +60,15 @@ function App() {
 
   return (
     <main>
+      {winner && <Confetti />}
       <Navigation />
       <p className="instructions">Roll until all dice are the same.
         Click each die to freeze it at its current value between rolls.</p>
-      {winner && <Confetti />}
       <div className="dice-container">
         {allDice}
       </div>
       <button className="roll-dice" onClick={toggleRoll}>{winner ? "New Game" : "Roll"}</button>
+      <p className="counter">You rolled {rollCounter} times</p>
     </main>
   );
 }
