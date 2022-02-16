@@ -38,6 +38,11 @@ main {
   padding: 30px;
 }
 
+.instructions {
+  text-align: center;
+  color: white;
+}
+
 .dice-container {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);

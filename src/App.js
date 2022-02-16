@@ -57,8 +57,10 @@ function App() {
 
   return (
     <main>
-      {winner && <Confetti />}
       <Navigation />
+      <p className="instructions">Roll until all dice are the same.
+        Click each die to freeze it at its current value between rolls.</p>
+      {winner && <Confetti />}
       <div className="dice-container">
         {allDice}
       </div>
