@@ -22,6 +22,7 @@ main {
   height: 100px;
   width: 100%;
   background: #8660FF;
+  color: white;
 }
 
 .navigation-title {
@@ -72,6 +73,7 @@ main {
   background: #8660FF;
   font-size: 1.2rem;
   cursor: pointer;
+  color: white;
 }
 
 .roll-dice:focus {
