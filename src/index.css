@@ -8,7 +8,6 @@
 body {
   margin: 0;
   background-color: #0B2434;
-  font-family: 'Karla', sans-serif;
 }
 
 main {
@@ -29,11 +28,6 @@ main {
   margin: 0;
   padding: 30px;
   text-align: center;
-}
-
-.navigation-profile {
-  margin: 0;
-  padding: 30px;
 }
 
 .instructions {
@@ -68,7 +62,6 @@ main {
 
 .die-num {
   font-size: 2rem;
-  
 }
 
 .roll-dice {

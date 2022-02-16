@@ -1,7 +1,7 @@
 import React from 'react'
 import '../index.css'
 
-export default function Dice(props) {
+export default function Die(props) {
     const styles = {
         backgroundColor: props.isSelected ? "#8660FF" : "white"
     }

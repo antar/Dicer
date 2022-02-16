@@ -1,13 +1,11 @@
 import React from 'react'
-import './index.css'
 import Navigation from './components/Navigation'
 import Die from './components/Die'
-import { nanoid } from 'nanoid'
 import Confetti from 'react-confetti'
+import { nanoid } from 'nanoid'
+import './index.css'
 
-
-function App() {
-
+export default function App() {
   const [dice, setDice] = React.useState(createRandomDice())
   const [winner, setWinner] = React.useState(false)
   const [rollCounter, setRollCounter] = React.useState(0)
@@ -24,7 +22,7 @@ function App() {
   function generateNewDie() {
     return {
       value: Math.ceil(Math.random() * 6),
-      isHeld: false,
+      isSelected: false,
       id: nanoid()
     }
   }
@@ -62,15 +60,10 @@ function App() {
     <main>
       {winner && <Confetti />}
       <Navigation />
-      <p className="instructions">Roll until all dice are the same.
-        Click each die to freeze it at its current value between rolls.</p>
-      <div className="dice-container">
-        {allDice}
-      </div>
+      <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+      <div className="dice-container">{allDice}</div>
       <button className="roll-dice" onClick={toggleRoll}>{winner ? "New Game" : "Roll"}</button>
-      <p className="counter">You rolled {rollCounter} times</p>
+      <p className="counter">You rolled {rollCounter} time{rollCounter === 1 ? "" : "s"}</p>
     </main>
   );
 }
-
-export default App;
