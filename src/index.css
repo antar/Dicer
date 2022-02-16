@@ -23,14 +23,12 @@ main {
   height: 100px;
   width: 100%;
   background: #8660FF;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .navigation-title {
   margin: 0;
   padding: 30px;
+  text-align: center;
 }
 
 .navigation-profile {
